@@ -1,0 +1,14 @@
+# Runtime artifacts produced when the skill audits a video
+audit-workspace/
+*.srt
+*.vtt
+
+# Stray media / frames (don't commit users' ads or extracted frames)
+frame_*.jpg
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
