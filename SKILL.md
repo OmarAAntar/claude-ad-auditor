@@ -5,8 +5,8 @@ description: >-
   performance. Use this whenever the user wants to review, critique, grade, diagnose,
   or improve a video ad / creative — e.g. "audit my Facebook ad", "is this TikTok ad
   any good", "why isn't my creative converting", "review this ad video", "rate my UGC
-  ad", "score these 3 ad variations" — or whenever they hand over one or more .mp4/.mov
-  files or ad URLs (TikTok, Meta Ad Library, YouTube/Shorts) and want feedback. Extracts
+  ad", "score these 3 ad variations" — or whenever they upload or point to one or more
+  video files (.mp4/.mov) and want feedback. Extracts
   frames with ffmpeg (densely across the first 3-second hook), transcribes the audio with
   local Whisper, and scores the hook, pacing, message clarity, captions, CTA, social proof,
   script/voiceover, production, and mobile/safe-zone fit on a 0–100 scale with a
@@ -42,11 +42,14 @@ Create a per-run workspace so frames and transcripts stay organized, e.g.
 `audit-workspace/<video-stem>/`. Then for **each** video:
 
 ### 1. Get the video file
-- **Local file:** use the path as-is.
-- **URL:** `bash scripts/fetch_video.sh "<url>" audit-workspace/<stem>/` →
-  reads back `video_file=...`. If it exits 3, yt-dlp isn't installed (offer the
-  install). If a Meta Ad Library link fails to download, ask the user for the
-  local .mp4 — those pages don't expose a direct file reliably.
+**The main path:** the user uploads or points to one or more local video files
+(.mp4/.mov). Use those paths directly — this is the primary, expected input, so
+assume it unless a link is explicitly given.
+
+*Optional fallback* — if the user instead gives a URL, run
+`bash scripts/fetch_video.sh "<url>" audit-workspace/<stem>/` (reads back
+`video_file=...`; exit 3 means yt-dlp isn't installed). Meta Ad Library links
+often can't be downloaded — ask for the uploaded file instead.
 
 ### 2. Probe specs & detect placement
 ```bash

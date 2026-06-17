@@ -20,9 +20,9 @@ DTC creative rubric tuned for **Meta (Facebook/Instagram)** and **TikTok**.
   recommendation on which to run or scale.
 
 ## Inputs
-- Local `.mp4` / `.mov` files, **or**
-- Ad **URLs** — TikTok, YouTube/Shorts, most public videos (via `yt-dlp`).
-  (Meta Ad Library links often can't be downloaded directly — pass the file.)
+- **Upload your video files** (`.mp4` / `.mov`) — the main, expected way to use it.
+- *Optional fallback:* an ad **URL** (TikTok, YouTube/Shorts, via `yt-dlp`).
+  (Meta Ad Library links often can't be downloaded — just upload the file.)
 
 Placement (Reels / TikTok / feed / YouTube) is **auto-detected** from the aspect
 ratio, and the safe-zone checks adapt accordingly.
@@ -40,9 +40,9 @@ ratio, and the safe-zone checks adapt accordingly.
    alternative, and notes on Arabic / mixed-language audio.
 
 ## Usage
-Just ask Claude things like:
-- "Audit this ad" *(with an .mp4)*
-- "Is this TikTok ad good? https://…"
+Upload your ad video(s), then ask Claude things like:
+- "Audit this ad" *(with your .mp4)*
+- "Is this TikTok ad any good?" *(upload the video)*
 - "Score these 3 ad variations and tell me which to run"
 - "Why isn't my Facebook creative converting?"
 

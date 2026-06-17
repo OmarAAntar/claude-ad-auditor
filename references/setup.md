@@ -38,7 +38,7 @@ if `small` mistranscribes. You can also force a language, e.g. `ar` or `en`.
 If no transcriber is installed, the skill still runs — it audits the visuals
 only, scores the script as "not assessable," and reminds you how to enable audio.
 
-## 3. yt-dlp — only for auditing URLs (optional)
+## 3. yt-dlp — optional, rarely needed (only if you paste a link instead of uploading)
 ```bash
 brew install yt-dlp     # or: pip3 install -U yt-dlp
 ```
